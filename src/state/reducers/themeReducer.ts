@@ -13,8 +13,6 @@ const themeReducer = ((state: Theme = initialState, action: Action) => {
         case 'dark':
           state = 'light';
           break;
-        default:
-          state = action.payload;
       }
 
       return state;

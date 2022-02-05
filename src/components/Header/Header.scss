@@ -1,13 +1,14 @@
-$color-pink: #FFA7C4;
 $color-white: #FFF;
 $color-snow: #FAFAFA;
 $color-black: #000;
 $color-dark: #222;
+$color-skyblue: skyblue;
 
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 15px 0 15px;
   width: 100%;
   height: 120px;
 
@@ -156,18 +157,18 @@ $color-dark: #222;
   
   .react-toggle--checked .react-toggle-thumb {
     left: 27px;
-    border-color: $color-pink;
+    border-color: $color-white;
   }
   
   .react-toggle--focus .react-toggle-thumb {
-    -webkit-box-shadow: 0px 0px 3px 2px $color-pink;
-    -moz-box-shadow: 0px 0px 3px 2px $color-pink;
-    box-shadow: 0px 0px 2px 3px $color-pink;
+    -webkit-box-shadow: 0px 0px 3px 2px $color-skyblue;
+    -moz-box-shadow: 0px 0px 3px 2px $color-skyblue;
+    box-shadow: 0px 0px 2px 3px $color-skyblue;
   }
   
   .react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
-    -webkit-box-shadow: 0px 0px 5px 5px $color-pink;
-    -moz-box-shadow: 0px 0px 5px 5px $color-pink;
-    box-shadow: 0px 0px 5px 5px $color-pink;
+    -webkit-box-shadow: 0px 0px 5px 5px $color-skyblue;
+    -moz-box-shadow: 0px 0px 5px 5px $color-skyblue;
+    box-shadow: 0px 0px 5px 5px $color-skyblue;
   }
 }

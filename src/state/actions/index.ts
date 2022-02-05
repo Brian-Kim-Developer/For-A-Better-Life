@@ -6,5 +6,12 @@ export interface ToggleThemeAction {
   payload: Theme;
 }
 
+
+export interface FetchDOQAction {
+  type: ActionType.FETCH_DOQ;
+  payload: any;
+}
+
 export type Action =
-  | ToggleThemeAction;
+  | ToggleThemeAction
+  | FetchDOQAction;
