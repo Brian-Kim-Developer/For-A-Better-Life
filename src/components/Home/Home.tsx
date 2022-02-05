@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { connect } from "react-redux";
-import { fetchDOQ } from "../../state/action-creators";
+import { useActions } from "../../hooks/use-actions";
+import { useTypedSelector } from "../../hooks/use-typed-selector";
 
 interface DOQ {
   author: string,
@@ -16,10 +16,13 @@ interface HomeProps {
   fetchDOQ: () => void;
 }
 
-const Home: React.FC<HomeProps> = ({doq, fetchDOQ}) => {
+const Home: React.FC<HomeProps> = () => {
+  const doq = useTypedSelector((state) => state.doq);
+  const { fetchDOQ } = useActions();
+
   useEffect(() => {
     fetchDOQ();
-  }, []);
+  }, [fetchDOQ]);
 
   return (
     <div>
@@ -28,15 +31,4 @@ const Home: React.FC<HomeProps> = ({doq, fetchDOQ}) => {
   )
 };
 
-const mapStateToProps = (state: any) => {
-  return { doq: state.doq };
-}
-
-const mapDispatchToProps = (dispatch: any) => ({
-  fetchDOQ: () => dispatch(fetchDOQ())
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home);
+export default Home;

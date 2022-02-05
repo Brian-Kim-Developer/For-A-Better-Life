@@ -23,13 +23,15 @@ const doqReducer = ((state: doqState = initialState, action: Action) => {
   switch (action.type) {
     case ActionType.FETCH_DOQ:
     const { author, background, category, quote, tags, title } = action.payload;  
-      state.author = author;
-      state.background = background;
-      state.category = category;
-      state.quote = quote;
-      state.tags = tags;
-      state.title = title;
-
+      state = {
+        ...state,
+        author,
+        background,
+        category,
+        quote,
+        tags,
+        title
+      }
       return state;
     default:
       return state;
