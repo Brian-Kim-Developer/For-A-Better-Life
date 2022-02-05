@@ -15,7 +15,11 @@ const QoD: React.FC<any> = () => {
 
   return (
     <div className="qod-container" style={{background: `url(${qod.background})`}}>
-      {qod.author}
+      <div className="qod-text-container">
+        <h4 className="fadein-top align-self-start mb-5">{qod.title}</h4>
+        <h1 className="fadein-bottom">"{qod.quote}"</h1>
+        <h5 className="fadein-bottom align-self-end">- {qod.author}</h5>
+      </div>
     </div>
   )
 };
