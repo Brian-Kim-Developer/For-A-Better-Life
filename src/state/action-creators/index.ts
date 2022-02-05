@@ -14,12 +14,12 @@ export const toggleTheme = (theme: Theme): ToggleThemeAction => {
   };
 };
 
-export const fetchDOQ = () => {
+export const fetchQoD = () => {
   return async (dispatch: Dispatch<Action>) => {
     const response = await api.get('/qod');
 
     dispatch({
-      type: ActionType.FETCH_DOQ,
+      type: ActionType.FETCH_QOD,
       payload: response.data.contents.quotes[0]
     });
   };

@@ -1,7 +1,7 @@
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
-interface doqState {
+interface qodState {
   author: string,
   background: string,
   category: string,
@@ -10,7 +10,7 @@ interface doqState {
   title: string
 }
 
-const initialState: doqState = {
+const initialState: qodState = {
   author: '',
   background: '',
   category: '',
@@ -19,9 +19,9 @@ const initialState: doqState = {
   title: ''
 }
 
-const doqReducer = ((state: doqState = initialState, action: Action) => {
+const qodReducer = ((state: qodState = initialState, action: Action) => {
   switch (action.type) {
-    case ActionType.FETCH_DOQ:
+    case ActionType.FETCH_QOD:
     const { author, background, category, quote, tags, title } = action.payload;  
       state = {
         ...state,
@@ -38,4 +38,4 @@ const doqReducer = ((state: doqState = initialState, action: Action) => {
   }
 });
 
-export default doqReducer;
+export default qodReducer;

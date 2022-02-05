@@ -3,13 +3,12 @@ import { createBrowserHistory } from 'history';
 import { useEffect } from 'react';
 
 import Header from '../Header/Header';
-import Home from '../Home/Home';
+import Home from '../Home';
 
 const App = () => {
 
   useEffect(()  => {
     document.body.classList.add('m-0');
-
     return () => {
         document.body.classList.remove('m-0');
     };

@@ -7,11 +7,11 @@ export interface ToggleThemeAction {
 }
 
 
-export interface FetchDOQAction {
-  type: ActionType.FETCH_DOQ;
+export interface FetchQoDAction {
+  type: ActionType.FETCH_QOD;
   payload: any;
 }
 
 export type Action =
   | ToggleThemeAction
-  | FetchDOQAction;
+  | FetchQoDAction;

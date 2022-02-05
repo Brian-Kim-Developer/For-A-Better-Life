@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import doqReducer from './doqReducer';
+import qodReducer from './qodReducer';
 import themeReducer from './themeReducer';
 
 const reducers = combineReducers({
   theme: themeReducer,
-  doq: doqReducer
+  qod: qodReducer
 });
 
 export default reducers;
