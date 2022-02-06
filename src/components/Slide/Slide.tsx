@@ -1,52 +1,52 @@
+import { useEffect } from "react";
+import Slider from "react-slick";
+
 import "./Slide.scss";
 
 interface SlideProps {
-  author: string,
-  quote: string,
-  background: string,
-  title: string
+  categories: Array<string>
 }
 
 const Slide: React.FC<SlideProps> = (props) => {
 
+  const { categories } = props;
+  
+  useEffect(() => {
+    console.log(categories);
+  }, [categories])
+
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "10px",
+    slidesToShow: 3,
+    speed: 500,
+    dots: true
+  };
+
   return (
-    <div id="carouselExampleCaptions" className="carousel slide carousel-fade" data-ride="carousel">
-      <ol className="carousel-indicators">
-        <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      </ol>
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img src="img/logo_dark.png" className="d-block w-100" alt="img/logo_dark" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </div>
+    <div className="slide">
+      <Slider {...settings}>
+        <div className="item">
+          <h3>1</h3>
         </div>
-        <div className="carousel-item">
-          <img src="img/logo_dark.png" className="d-block w-100" alt="img/logo_dark" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </div>
+        <div className="item">
+          <h3>2</h3>
         </div>
-        <div className="carousel-item">
-          <img src="img/logo_dark.png" className="d-block w-100" alt="img/logo_dark" />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
+        <div className="item">
+          <h3>3</h3>
         </div>
-      </div>
-      <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="sr-only">Previous</span>
-      </a>
-      <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="sr-only">Next</span>
-      </a>
+        <div className="item">
+          <h3>4</h3>
+        </div>
+        <div className="item">
+          <h3>5</h3>
+        </div>
+        <div className="item">
+          <h3>6</h3>
+        </div>
+      </Slider>
     </div>
   )
 };

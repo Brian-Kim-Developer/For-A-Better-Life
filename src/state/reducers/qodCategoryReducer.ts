@@ -1,10 +1,10 @@
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
 
-const qodCategoryReducer = ((state: Object = {}, action: Action) => {
+const qodCategoryReducer = ((state: Array<string> = [], action: Action) => {
   switch (action.type) {
     case ActionType.FETCH_QOD_CATEGORY:
-      state = Object.assign({}, action.payload);
+      state = Object.keys(action.payload);
 
       return state;
     default:

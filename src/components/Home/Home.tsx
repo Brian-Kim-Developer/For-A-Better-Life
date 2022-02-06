@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useActions } from "../../hooks/use-actions";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
 import QoD from "../QoD";
-// import Slide from "../Slide";
+import Slide from "../Slide";
 
 const Home: React.FC<any> = () => {
 
@@ -16,8 +16,7 @@ const Home: React.FC<any> = () => {
   return (
     <div>
       <QoD />
-      {Object.keys(qodCategory)}
-      {/* <Slide /> */}
+      <Slide categories={qodCategory}/>
     </div>
   )
 };
