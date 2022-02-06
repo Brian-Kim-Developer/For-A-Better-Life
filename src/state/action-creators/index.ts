@@ -14,9 +14,13 @@ export const toggleTheme = (theme: Theme): ToggleThemeAction => {
   };
 };
 
-export const fetchQoD = () => {
+export const fetchQoD = (category?: string) => {
   return async (dispatch: Dispatch<Action>) => {
-    const response = await api.get('/qod');
+    const response = await api.get('/qod', {
+      params: {
+        'category': category || ''
+      }
+    });
 
     dispatch({
       type: ActionType.FETCH_QOD,
@@ -24,3 +28,14 @@ export const fetchQoD = () => {
     });
   };
 };
+
+export const fetchQoDCategory = () => {
+  return async (dispatch: Dispatch<Action>) => {
+    const response = await api.get('/qod/categories');
+
+    dispatch({
+      type: ActionType.FETCH_QOD_CATEGORY,
+      payload: response.data.contents.categories
+    });
+  };
+}

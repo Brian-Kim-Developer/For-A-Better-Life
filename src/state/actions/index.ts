@@ -12,6 +12,12 @@ export interface FetchQoDAction {
   payload: any;
 }
 
+export interface FetchQoDCategoryAction {
+  type: ActionType.FETCH_QOD_CATEGORY;
+  payload: any;
+}
+
 export type Action =
   | ToggleThemeAction
-  | FetchQoDAction;
+  | FetchQoDAction
+  | FetchQoDCategoryAction;
