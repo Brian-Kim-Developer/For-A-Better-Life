@@ -1,25 +1,26 @@
 import { useEffect } from "react";
 import Slider from "react-slick";
+import { QoD } from "../../state/actions";
 
 import "./Slide.scss";
 
 interface SlideProps {
-  categories: Array<string>
+  qodList: Array<QoD>
 }
 
 const Slide: React.FC<SlideProps> = (props) => {
 
-  const { categories } = props;
-  
+  const { qodList } = props;
+
   useEffect(() => {
-    console.log(categories);
-  }, [categories])
+    console.log(qodList);
+  }, [qodList])
 
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
-    centerPadding: "10px",
+    centerPadding: "0px",
     slidesToShow: 3,
     speed: 500,
     dots: true
@@ -28,24 +29,15 @@ const Slide: React.FC<SlideProps> = (props) => {
   return (
     <div className="slide">
       <Slider {...settings}>
-        <div className="item">
-          <h3>1</h3>
-        </div>
-        <div className="item">
-          <h3>2</h3>
-        </div>
-        <div className="item">
-          <h3>3</h3>
-        </div>
-        <div className="item">
-          <h3>4</h3>
-        </div>
-        <div className="item">
-          <h3>5</h3>
-        </div>
-        <div className="item">
-          <h3>6</h3>
-        </div>
+        {qodList.map((qod) => {
+            return (
+              <div key={qod.id} className="item-container">
+                <div className="item" style={{background: `url(${qod.background})`}}>
+
+                </div>
+              </div>
+            )
+        })}
       </Slider>
     </div>
   )

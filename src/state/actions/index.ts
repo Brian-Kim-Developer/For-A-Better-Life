@@ -6,18 +6,27 @@ export interface ToggleThemeAction {
   payload: Theme;
 }
 
+export interface QoD {
+  id: string;
+  author: string;
+  category: string;
+  background: string;
+  quote: string;
+  title: string;
+  tags: Array<string>;
+}
 
 export interface FetchQoDAction {
   type: ActionType.FETCH_QOD;
-  payload: any;
+  payload: QoD;
 }
 
-export interface FetchQoDCategoryAction {
-  type: ActionType.FETCH_QOD_CATEGORY;
-  payload: any;
+export interface FetchQoDListAction {
+  type: ActionType.FETCH_QOD_LIST;
+  payload: Array<QoD>;
 }
 
 export type Action =
   | ToggleThemeAction
   | FetchQoDAction
-  | FetchQoDCategoryAction;
+  | FetchQoDListAction;

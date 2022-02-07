@@ -29,13 +29,22 @@ export const fetchQoD = (category?: string) => {
   };
 };
 
-export const fetchQoDCategory = () => {
+export const fetchQoDList = () => {
   return async (dispatch: Dispatch<Action>) => {
-    const response = await api.get('/qod/categories');
-
+    const categories = await api.get(
+      '/qod/categories'
+    ).then(categories => {
+      return Object.keys(categories.data.contents.categories).filter(category => category !== 'inspire')
+    });
+    const qodQuotes = await Promise.all(
+      categories.map(async category => await api.get('/qod', {params: {'category': category}}))
+    ).then(qodQuote => {
+      return qodQuote.map(qodQuote => qodQuote.data.contents.quotes[0]);
+    });
+    
     dispatch({
-      type: ActionType.FETCH_QOD_CATEGORY,
-      payload: response.data.contents.categories
+      type: ActionType.FETCH_QOD_LIST,
+      payload: qodQuotes
     });
   };
 }

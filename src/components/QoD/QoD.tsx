@@ -9,7 +9,7 @@ const QoD: React.FC<any> = () => {
   const { fetchQoD } = useActions();
 
   useEffect(() => {
-    fetchQoD();
+    fetchQoD('inspire');
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchQoD]);
 

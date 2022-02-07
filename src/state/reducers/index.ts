@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import qodCategoryReducer from './qodCategoryReducer';
+import qodListReducer from './qodListReducer';
 import qodReducer from './qodReducer';
 import themeReducer from './themeReducer';
 
 const reducers = combineReducers({
   theme: themeReducer,
   qod: qodReducer,
-  qodCategory: qodCategoryReducer
+  qodList: qodListReducer
 });
 
 export default reducers;

@@ -6,17 +6,17 @@ import Slide from "../Slide";
 
 const Home: React.FC<any> = () => {
 
-  const qodCategory = useTypedSelector((state) => state.qodCategory);
-  const { fetchQoDCategory } = useActions();
+  const qodList = useTypedSelector((state) => state.qodList);
+  const { fetchQoDList } = useActions();
 
   useEffect(() => {
-    fetchQoDCategory()
-  }, [fetchQoDCategory]);
+    fetchQoDList()
+  }, [fetchQoDList]);
 
   return (
     <div>
       <QoD />
-      <Slide categories={qodCategory}/>
+      <Slide qodList={qodList}/>
     </div>
   )
 };
