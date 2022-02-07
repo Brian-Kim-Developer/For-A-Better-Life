@@ -1,0 +1,15 @@
+$color-white: #FFF;
+$color-black: #000;
+
+body {
+  transition-property: background-color;
+  transition-duration: 0.25s;
+
+  &.light {
+    background-color: $color-white;
+  }
+
+  &.dark {
+    background-color: $color-black;
+  }
+}

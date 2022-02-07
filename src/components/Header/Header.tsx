@@ -8,12 +8,12 @@ import ImageSun from '../Images/ImageSun';
 import "./Header.scss";
 
 const Header: React.FC<any> = () => {
-  
+
   const theme = useTypedSelector((state) => state.theme);
   const { toggleTheme } = useActions();
 
   return (
-    <div className={`header-container ${theme}`}>
+    <div className="header-container">
       <img className="logo" src={`img/logo_${theme}.png`} alt="Homepage Logo" />
       <label>
         <Toggle
