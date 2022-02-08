@@ -13,7 +13,7 @@ export interface QoD {
   background: string;
   quote: string;
   title: string;
-  tags: Array<string>;
+  tags: any;
 }
 
 export interface FetchQoDAction {
@@ -26,7 +26,13 @@ export interface FetchQoDListAction {
   payload: Array<QoD>;
 }
 
+export interface setQoDAction {
+  type: ActionType.SET_QOD;
+  payload: QoD;
+}
+
 export type Action =
   | ToggleThemeAction
   | FetchQoDAction
-  | FetchQoDListAction;
+  | FetchQoDListAction
+  | setQoDAction;

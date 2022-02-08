@@ -1,15 +1,29 @@
-$color-white: #FFFFFF;
-$color-black: #000000;
+$color-white: #FFF;
+$color-black: #000;
 
 .qod-container {
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
   width: 100%;
   height: calc(100vh - 120px);
   padding: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .qod-image-container {
+    filter: brightness(50%);
+    position: absolute;
+    z-index: -1;
+    top: 120px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    width: 100%;
+    height: calc(100vh - 120px);
+    transition-property: background-image;
+    transition-duration: 0.25s;  
+  }
 
   .qod-text-container {
     display: flex;
@@ -24,6 +38,7 @@ $color-black: #000000;
       word-break: normal;
       text-align: center;
       font-style: italic;
+      color: $color-white;
     }
   
     h4 {

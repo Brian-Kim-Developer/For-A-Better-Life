@@ -22,7 +22,8 @@ const initialState: qodState = {
 const qodReducer = ((state: qodState = initialState, action: Action) => {
   switch (action.type) {
     case ActionType.FETCH_QOD:
-    const { author, background, category, quote, tags, title } = action.payload;  
+    case ActionType.SET_QOD:
+      const { author, background, category, quote, tags, title } = action.payload;  
       state = {
         ...state,
         author,

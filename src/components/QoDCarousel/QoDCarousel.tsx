@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Slider from "react-slick";
+import { useActions } from "../../hooks/use-actions";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
 import { QoD } from "../../state/actions";
 
@@ -13,6 +14,7 @@ const QoDCarousel: React.FC<QoDCarouselProps> = (props) => {
 
   const { qodList } = props;
   const theme = useTypedSelector((state) => state.theme);
+  const { setQoD } = useActions();
 
   useEffect(() => {
     console.log(qodList);
@@ -34,7 +36,7 @@ const QoDCarousel: React.FC<QoDCarouselProps> = (props) => {
         {qodList.map((qod) => {
             return (
               <div key={qod.id} className="item-container">
-                <div className="thumbex">
+                <div className="thumbex" onClick={() => setQoD(qod)}>
                   <div className="thumbnail">
                     <img src={`${qod.background}`} alt={qod.category}/>
                     <span>{qod.category.charAt(0).toUpperCase() + qod.category.slice(1)}</span>

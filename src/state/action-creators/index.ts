@@ -5,6 +5,7 @@ import {
   Theme,
   ToggleThemeAction,
   Action,
+  QoD,
 } from '../actions';
 
 export const toggleTheme = (theme: Theme): ToggleThemeAction => {
@@ -34,7 +35,7 @@ export const fetchQoDList = () => {
     const categories = await api.get(
       '/qod/categories'
     ).then(categories => {
-      return Object.keys(categories.data.contents.categories).filter(category => category !== 'inspire')
+      return Object.keys(categories.data.contents.categories)
     });
     const qodQuotes = await Promise.all(
       categories.map(async category => await api.get('/qod', {params: {'category': category}}))
@@ -47,4 +48,11 @@ export const fetchQoDList = () => {
       payload: qodQuotes
     });
   };
+}
+
+export const setQoD = (qod: QoD) => {
+  return {
+    type: ActionType.SET_QOD,
+    payload: qod
+  }
 }

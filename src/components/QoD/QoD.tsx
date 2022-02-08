@@ -9,12 +9,13 @@ const QoD: React.FC<any> = () => {
   const { fetchQoD } = useActions();
 
   useEffect(() => {
-    fetchQoD('inspire');
+    fetchQoD();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchQoD]);
 
   return (
-    <div className="qod-container" style={{background: `url(${qod.background})`}}>
+    <div className="qod-container">
+      <div className="qod-image-container" style={{backgroundImage: `url(${qod.background})`}}></div>
       <div className="qod-text-container">
         <h4 className="fadein-top align-self-start mb-5">{qod.title}</h4>
         <h1 className="fadein-bottom">"{qod.quote}"</h1>
