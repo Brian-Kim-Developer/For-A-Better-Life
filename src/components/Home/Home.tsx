@@ -3,6 +3,7 @@ import { useActions } from "../../hooks/use-actions";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
 import QoD from "../QoD";
 import QoDCarousel from "../QoDCarousel";
+import QSearch from "../QSearch";
 
 const Home: React.FC<any> = () => {
 
@@ -132,6 +133,7 @@ const Home: React.FC<any> = () => {
     <div>
       <QoD />
       <QoDCarousel qodList={qodListMock}/>
+			<QSearch />
     </div>
   )
 };
