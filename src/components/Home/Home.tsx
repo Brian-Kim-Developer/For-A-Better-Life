@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useActions } from "../../hooks/use-actions";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
 import QoD from "../QoD";
-import Slide from "../Slide";
+import QoDCarousel from "../QoDCarousel";
 
 const Home: React.FC<any> = () => {
 
@@ -16,7 +16,7 @@ const Home: React.FC<any> = () => {
   return (
     <div>
       <QoD />
-      <Slide qodList={qodList}/>
+      <QoDCarousel qodList={qodList}/>
     </div>
   )
 };

@@ -1,16 +1,18 @@
 import { useEffect } from "react";
 import Slider from "react-slick";
+import { useTypedSelector } from "../../hooks/use-typed-selector";
 import { QoD } from "../../state/actions";
 
-import "./Slide.scss";
+import "./QoDCarousel.scss";
 
-interface SlideProps {
+interface QoDCarouselProps {
   qodList: Array<QoD>
 }
 
-const Slide: React.FC<SlideProps> = (props) => {
+const QoDCarousel: React.FC<QoDCarouselProps> = (props) => {
 
   const { qodList } = props;
+  const theme = useTypedSelector((state) => state.theme);
 
   useEffect(() => {
     console.log(qodList);
@@ -27,13 +29,16 @@ const Slide: React.FC<SlideProps> = (props) => {
   };
 
   return (
-    <div className="slide">
+    <div className={`carousel ${theme}`}>
       <Slider {...settings}>
         {qodList.map((qod) => {
             return (
               <div key={qod.id} className="item-container">
-                <div className="item" style={{background: `url(${qod.background})`}}>
-
+                <div className="thumbex">
+                  <div className="thumbnail">
+                    <img src={`${qod.background}`} alt={qod.category}/>
+                    <span>{qod.category.charAt(0).toUpperCase() + qod.category.slice(1)}</span>
+                  </div>
                 </div>
               </div>
             )
@@ -43,4 +48,4 @@ const Slide: React.FC<SlideProps> = (props) => {
   )
 };
 
-export default Slide;
+export default QoDCarousel;
