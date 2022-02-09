@@ -21,8 +21,8 @@ export interface FetchQoDAction {
   payload: QoD;
 }
 
-export interface FetchQoDListAction {
-  type: ActionType.FETCH_QOD_LIST;
+export interface fetchAllQoDAction {
+  type: ActionType.FETCH_All_QOD;
   payload: Array<QoD>;
 }
 
@@ -34,5 +34,5 @@ export interface setQoDAction {
 export type Action =
   | ToggleThemeAction
   | FetchQoDAction
-  | FetchQoDListAction
+  | fetchAllQoDAction
   | setQoDAction;

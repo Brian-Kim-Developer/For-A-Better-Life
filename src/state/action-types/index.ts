@@ -1,6 +1,6 @@
 export enum ActionType {
   TOGGLE_THEME = 'toggle_theme',
   FETCH_QOD = 'fetch_qod',
-  FETCH_QOD_LIST = 'fetch_qod_list',
+  FETCH_All_QOD = 'fetch_all_qod',
   SET_QOD = 'set_qod'
 }

@@ -30,22 +30,17 @@ export const fetchQoD = (category?: string) => {
   };
 };
 
-export const fetchQoDList = () => {
+export const fetchAllQoD = () => {
   return async (dispatch: Dispatch<Action>) => {
-    const categories = await api.get(
-      '/qod/categories'
-    ).then(categories => {
-      return Object.keys(categories.data.contents.categories)
+    const response = await api.get('/qod', {
+      params: {
+        'category': 'all'
+      }
     });
-    const qodQuotes = await Promise.all(
-      categories.map(async category => await api.get('/qod', {params: {'category': category}}))
-    ).then(qodQuote => {
-      return qodQuote.map(qodQuote => qodQuote.data.contents.quotes[0]);
-    });
-    
+
     dispatch({
-      type: ActionType.FETCH_QOD_LIST,
-      payload: qodQuotes
+      type: ActionType.FETCH_All_QOD,
+      payload: response.data.contents.quotes
     });
   };
 }

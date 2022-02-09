@@ -123,16 +123,16 @@ const Home: React.FC<any> = () => {
     }
 	];
 
-  const { fetchQoDList } = useActions();
+  const { fetchAllQoD } = useActions();
 
   useEffect(() => {
-    fetchQoDList()
-  }, [fetchQoDList]);
+    fetchAllQoD()
+  }, [fetchAllQoD]);
 
   return (
     <div>
       <QoD />
-      <QoDCarousel qodList={qodListMock}/>
+      <QoDCarousel qodList={qodList}/>
 			<QSearch />
     </div>
   )

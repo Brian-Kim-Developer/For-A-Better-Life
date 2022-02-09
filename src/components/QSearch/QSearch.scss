@@ -1,0 +1,15 @@
+$color-black: #000;
+$color-white: #FFF;
+
+.search-header {
+  margin: 20px 0 10px 50px;
+  font-family: 'Merriweather Sans', sans-serif;
+
+  &.light {
+    color: $color-black;
+  }
+
+  &.dark {
+    color: $color-white;
+  }
+}
