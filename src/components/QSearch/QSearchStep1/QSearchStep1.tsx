@@ -1,9 +1,9 @@
 import React from "react";
 
-import "./QSearchFirstStep.scss";
+import "./QSearchStep1.scss";
 
-const QSearchFirstStep: React.FC<any> = () => {
-
+const QSearchStep1: React.FC<any> = (props) => {
+  
   return (
     <React.Fragment>
       <div>First Step</div>
@@ -11,4 +11,4 @@ const QSearchFirstStep: React.FC<any> = () => {
   )
 };
 
-export default QSearchFirstStep;
+export default QSearchStep1;
