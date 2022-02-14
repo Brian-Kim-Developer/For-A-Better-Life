@@ -3,6 +3,7 @@ $color-black: #000;
 
 .qod-container {
   width: 100%;
+  min-height: 600px;
   height: calc(100vh - 120px);
   padding: 50px;
   display: flex;
@@ -20,6 +21,7 @@ $color-black: #000;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     width: 100%;
+    min-height: 600px;
     height: calc(100vh - 120px);
     transition-property: background-image;
     transition-duration: 0.25s;  

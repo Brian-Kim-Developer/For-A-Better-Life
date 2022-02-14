@@ -1,15 +1,34 @@
 $color-black: #000;
 $color-white: #FFF;
 
-.search-header {
-  margin: 20px 0 10px 50px;
-  font-family: 'Merriweather Sans', sans-serif;
-
+.search-container {
+  height: 750px;
+  margin: 20px 50px 10px 50px;
+  
   &.light {
     color: $color-black;
   }
 
   &.dark {
     color: $color-white;
+  }
+
+  .search-header {
+    font-family: 'Merriweather Sans', sans-serif;
+  
+    &.light {
+      color: $color-black;
+    }
+  
+    &.dark {
+      color: $color-white;
+    }
+  }
+
+  .search-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
   }
 }

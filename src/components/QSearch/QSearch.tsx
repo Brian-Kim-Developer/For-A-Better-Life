@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
 
+import QSearchStart from "./QSearchStart";
 import QSearchStep1 from "./QSearchStep1";
 import QSearchStep2 from "./QSearchStep2";
 import QSearchStep3 from "./QSearchStep3";
+import QSearchResult from "./QSearchResult";
 
 import "./QSearch.scss";
 
@@ -20,17 +22,21 @@ const QSearch: React.FC<any> = () => {
     setPage(page - 1);
   }
 
+  const resetPage = () => {
+    setPage(0);
+  }
+
   return (
-    <React.Fragment>
+    <div className={`search-container ${theme}`}>
       <h5 className={`search-header ${theme}`}>The perfect quotes for you!</h5>
-      { page === 0 && <div>Start!</div> }
-      { page === 1 && <QSearchStep1 /> }
-      { page === 2 && <QSearchStep2 /> }
-      { page === 3 && <QSearchStep3 /> }
-      { page === 4 && <div>Final!</div> }
-      <button onClick={() => previousPage()}>Back</button>
-      <button onClick={() => nextPage()}>Next</button>
-    </React.Fragment>
+      <div className="search-body">
+        { page === 0 && <QSearchStart handleSubmit={nextPage}/> }
+        { page === 1 && <QSearchStep1 previousPage={previousPage} handleSubmit={nextPage} /> }
+        { page === 2 && <QSearchStep2 previousPage={previousPage} handleSubmit={nextPage} /> }
+        { page === 3 && <QSearchStep3 previousPage={previousPage} handleSubmit={nextPage} /> }
+        { page === 4 && <QSearchResult resetPage={resetPage} /> }
+      </div>
+    </div>
   )
 };
 
