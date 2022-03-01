@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
+import { QuoteSearch } from "../../state/action-creators";
 
 import QSearchStart from "./QSearchStart";
 import QSearchStep1 from "./QSearchStep1";
@@ -9,8 +11,13 @@ import QSearchResult from "./QSearchResult";
 
 import "./QSearch.scss";
 
-const QSearch: React.FC<any> = () => {
+interface QSearchProps {
+  onSubmit: (formValues: QuoteSearch) => void;
+}
 
+const QSearch: React.FC<QSearchProps> = (props) => {
+
+  const { onSubmit } = props;
   const theme = useTypedSelector((state) => state.theme);
   const [page, setPage] = useState(0);
 
@@ -26,18 +33,27 @@ const QSearch: React.FC<any> = () => {
     setPage(0);
   }
 
+  const getResult = (formValues: QuoteSearch) => {
+    nextPage();
+    onSubmit(formValues);
+  }
+
   return (
     <div className={`search-container ${theme}`}>
       <h5 className={`search-header ${theme}`}>The perfect quotes for you!</h5>
       <div className="search-body">
-        { page === 0 && <QSearchStart handleSubmit={nextPage}/> }
-        { page === 1 && <QSearchStep1 previousPage={previousPage} handleSubmit={nextPage} /> }
-        { page === 2 && <QSearchStep2 previousPage={previousPage} handleSubmit={nextPage} /> }
-        { page === 3 && <QSearchStep3 previousPage={previousPage} handleSubmit={nextPage} /> }
+        { page === 0 && <QSearchStart onSubmit={nextPage}/> }
+        { page === 1 && <QSearchStep1 previousPage={previousPage} onSubmit={nextPage} /> }
+        { page === 2 && <QSearchStep2 previousPage={previousPage} onSubmit={nextPage} /> }
+        { page === 3 && <QSearchStep3 previousPage={previousPage} onSubmit={getResult} /> }
         { page === 4 && <QSearchResult resetPage={resetPage} /> }
       </div>
     </div>
   )
+};
+
+QSearch.propTypes = {
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default QSearch;

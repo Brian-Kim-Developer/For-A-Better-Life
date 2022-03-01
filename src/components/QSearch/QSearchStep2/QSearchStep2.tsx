@@ -18,7 +18,7 @@ const QSearchStep2: React.FC<QSearchStep2Props> = (props) => {
     <div>
       <h2>What is the author you're interested in?</h2>
       <form onSubmit={handleSubmit}>
-        <button onClick={previousPage} className="back">Back</button>
+        <button type="button" onClick={previousPage} className="back">Back</button>
         <Field 
           name="author"
           type="text"

@@ -51,3 +51,27 @@ export const setQoD = (qod: QoD) => {
     payload: qod
   }
 }
+
+export interface QuoteSearch {
+  category: string,
+  author: string,
+  keyword: string
+}
+
+export const fetchUserQuotes = (formValues: QuoteSearch) => {
+  return async (dispatch: Dispatch<Action>) => {
+    console.log('formValues', formValues)
+    const response = await api.get('/quote/search', {
+      params: {
+        'category': formValues.category,
+        'author': formValues.author,
+        'keyword': formValues.keyword
+      }
+    });
+
+    dispatch({
+      type: ActionType.FETCH_USER_QUOTES,
+      payload: response.data.contents.quotes
+    });
+  };
+}

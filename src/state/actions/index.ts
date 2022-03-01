@@ -21,18 +21,29 @@ export interface FetchQoDAction {
   payload: QoD;
 }
 
-export interface fetchAllQoDAction {
+export interface FetchAllQoDAction {
   type: ActionType.FETCH_All_QOD;
   payload: Array<QoD>;
 }
 
-export interface setQoDAction {
+export interface SetQoDAction {
   type: ActionType.SET_QOD;
   payload: QoD;
+}
+
+export interface Quote {
+  id: string,
+  quote: string,
+  author: string
+}
+export interface FetchUserQuotes {
+  type: ActionType.FETCH_USER_QUOTES;
+  payload: Array<Quote>;
 }
 
 export type Action =
   | ToggleThemeAction
   | FetchQoDAction
-  | fetchAllQoDAction
-  | setQoDAction;
+  | FetchAllQoDAction
+  | SetQoDAction
+  | FetchUserQuotes;

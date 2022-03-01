@@ -3,16 +3,16 @@ import React from "react";
 import "./QSearchStart.scss";
 
 interface QSearchStartProps {
-  handleSubmit: () => void;
+  onSubmit: () => void;
 }
 
 const QSearchStart: React.FC<QSearchStartProps> = (props) => {
   
-  const { handleSubmit } = props;
+  const { onSubmit } = props;
 
   return (
     <div>
-      <button onClick={handleSubmit} className="start-button">Start</button>
+      <button onClick={onSubmit} className="start-button">Start</button>
     </div>
   )
 };

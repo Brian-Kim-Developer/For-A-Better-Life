@@ -18,7 +18,7 @@ const QSearchStep1: React.FC<QSearchStep1Props> = (props) => {
     <div>
       <h2>What is the category you're interested in?</h2>
       <form onSubmit={handleSubmit}>
-        <button onClick={previousPage} className="back">Back</button>
+        <button type="button" onClick={previousPage} className="back">Back</button>
         <Field 
           name="category"
           type="text"
