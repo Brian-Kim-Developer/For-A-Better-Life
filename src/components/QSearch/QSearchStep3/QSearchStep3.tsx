@@ -20,7 +20,7 @@ const QSearchStep3: React.FC<QSearchStep3Props> = (props) => {
       <form onSubmit={handleSubmit}>
         <button type="button" onClick={previousPage} className="back">Back</button>
         <Field
-          name="keyword"
+          name="query"
           type="text"
           component={renderField}
           label="Keyword"

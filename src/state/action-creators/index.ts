@@ -55,7 +55,7 @@ export const setQoD = (qod: QoD) => {
 export interface QuoteSearch {
   category: string,
   author: string,
-  keyword: string
+  query: string
 }
 
 export const fetchUserQuotes = (formValues: QuoteSearch) => {
@@ -65,7 +65,7 @@ export const fetchUserQuotes = (formValues: QuoteSearch) => {
       params: {
         'category': formValues.category,
         'author': formValues.author,
-        'keyword': formValues.keyword
+        'query': formValues.query
       }
     });
 
