@@ -26,7 +26,10 @@ $color-skyblue: skyblue;
     touch-action: pan-x;
     
     display: inline-block;
-    position: relative;
+    position: fixed;
+    right: 20px;
+    top: 48px;
+    z-index: 1;
     cursor: pointer;
     background-color: transparent;
     border: 0;
