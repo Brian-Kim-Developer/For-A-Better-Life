@@ -1,10 +1,12 @@
+$color-mint: #50d8d7;
+
 .start-button {
   width: 100px;
   height: 50px;
   font-size: 22px;
-  border: 1px solid #50d8d7;
+  border: 1px solid $color-mint;
   color: #fff;
   cursor: pointer;
-  background-color: #50d8d7;
+  background-color: $color-mint;
   border-radius: 20px;
 }

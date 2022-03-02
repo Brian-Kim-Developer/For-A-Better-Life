@@ -65,7 +65,8 @@ export const fetchUserQuotes = (formValues: QuoteSearch) => {
       params: {
         'category': formValues.category,
         'author': formValues.author,
-        'query': formValues.query
+        'query': formValues.query,
+        'limit': 3
       }
     });
 
