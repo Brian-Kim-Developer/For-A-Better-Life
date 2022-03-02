@@ -2,24 +2,24 @@ $color-black: #000;
 $color-white: #FFF;
 
 .search-container {
-  height: 750px;
   margin: 60px 50px 10px 50px;
-  
+  label {
+    color: #212529;
+  }
+
   &.light {
     color: $color-black;
   }
-
   &.dark {
     color: $color-white;
   }
 
   .search-header {
     font-family: 'Merriweather Sans', sans-serif;
-  
+    
     &.light {
       color: $color-black;
     }
-  
     &.dark {
       color: $color-white;
     }
@@ -29,6 +29,6 @@ $color-white: #FFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: 720px;
   }
 }

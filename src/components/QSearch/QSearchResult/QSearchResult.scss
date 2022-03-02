@@ -1,0 +1,89 @@
+$color-black: #000;
+$color-white: #FFF;
+$color-mint: #50d8d7;
+
+.result-containter {
+  width: 100%;
+  max-width: 1000px;
+  font-family: 'Merriweather Sans', sans-serif;
+
+  .author {
+    font-size: 16px;
+  }
+
+  .quote {
+    font-size: 20px;
+    font-style: italic;
+  }
+}
+
+.icon {
+  &-message {
+    color: $color-mint;
+    margin-right: 20px;
+  }
+}
+
+#reset {
+  opacity: 0.7;
+  display: inline-block;
+  font: normal bold 2em Arial,sans-serif;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  width: auto;
+  padding: 0.5em 1.5em;
+  border: none;
+  background-color: transparent;
+
+  &.light {
+    color: $color-black;
+  }
+  &.dark {
+    color: $color-white;
+  }
+}
+
+#reset:before,
+#reset:after {
+  background: $color-mint;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
+  content: "";
+  display: block;
+  height: 0.5em;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1em;
+}
+
+#reset:before,
+#reset:after { left: 0 }
+
+#reset:before {
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#reset:after {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#reset:after { margin-top: -.36em }
+
+#reset:hover,
+#reset:focus { opacity: 1 }
+
+#reset:hover:before,
+#reset:hover:after,
+#reset:focus:before,
+#reset:focus:after { opacity: 1 }

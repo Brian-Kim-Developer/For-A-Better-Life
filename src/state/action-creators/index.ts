@@ -61,18 +61,25 @@ export interface QuoteSearch {
 export const fetchUserQuotes = (formValues: QuoteSearch) => {
   return async (dispatch: Dispatch<Action>) => {
     console.log('formValues', formValues)
-    const response = await api.get('/quote/search', {
-      params: {
-        'category': formValues.category,
-        'author': formValues.author,
-        'query': formValues.query,
-        'limit': 3
-      }
-    });
+    try {
+      const response = await api.get('/quote/search', {
+        params: {
+          'category': formValues.category,
+          'author': formValues.author,
+          'query': formValues.query,
+          'limit': 3
+        }
+      });
 
-    dispatch({
-      type: ActionType.FETCH_USER_QUOTES,
-      payload: response.data.contents.quotes
-    });
+      dispatch({
+        type: ActionType.FETCH_USER_QUOTES,
+        payload: response.data.contents.quotes
+      });
+    } catch (ex: any) {
+      dispatch({
+        type: ActionType.FETCH_USER_QUOTES,
+        payload: []
+      });
+    }
   };
 }
