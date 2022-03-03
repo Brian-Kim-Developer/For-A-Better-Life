@@ -58,9 +58,15 @@ export interface QuoteSearch {
   query: string
 }
 
+export const userQuotesloadingToggle = (status: boolean) => {
+  return {
+    type: ActionType.USER_QUOTES_LOADING_TOGGLE,
+    payload: status
+  }
+}
+
 export const fetchUserQuotes = (formValues: QuoteSearch) => {
   return async (dispatch: Dispatch<Action>) => {
-    console.log('formValues', formValues)
     try {
       const response = await api.get('/quote/search', {
         params: {

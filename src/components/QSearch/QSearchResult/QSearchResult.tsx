@@ -3,6 +3,7 @@ import { useTypedSelector } from "../../../hooks/use-typed-selector";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMessage, faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import NoResult from "./NoResult";
+import Loader from "../../Loader";
 
 import "./QSearchResult.scss";
 
@@ -18,8 +19,9 @@ const QSearchResult: React.FC<QSearchResultProps> = (props) => {
 
   return (
     <div className="result-containter">
-      {userQuotes.length === 0 && <NoResult />}
-      {userQuotes.length > 0 && userQuotes.map(quote => {
+      {userQuotes.loading && <Loader width="40px" height="40px" />}
+      {!userQuotes.loading && userQuotes.data.length === 0 && <NoResult />}
+      {!userQuotes.loading && userQuotes.data.length > 0 && userQuotes.data.map(quote => {
         return (
             <div key={quote.id} className="d-flex flex-row mb-3">
               <FontAwesomeIcon icon={faMessage} size="10x" className="icon-message"/>

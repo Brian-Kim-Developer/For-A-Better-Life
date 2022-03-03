@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useTypedSelector } from "../../hooks/use-typed-selector";
+import { useActions } from "../../hooks/use-actions";
 import { QuoteSearch } from "../../state/action-creators";
 
 import QSearchStart from "./QSearchStart";
@@ -18,6 +19,7 @@ interface QSearchProps {
 const QSearch: React.FC<QSearchProps> = (props) => {
 
   const { onSubmit } = props;
+  const { userQuotesloadingToggle } = useActions();
   const theme = useTypedSelector((state) => state.theme);
   const [page, setPage] = useState(0);
 
@@ -35,6 +37,7 @@ const QSearch: React.FC<QSearchProps> = (props) => {
 
   const getResult = (formValues: QuoteSearch) => {
     nextPage();
+    userQuotesloadingToggle(true);
     onSubmit(formValues);
   }
 

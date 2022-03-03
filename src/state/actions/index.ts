@@ -36,9 +36,13 @@ export interface Quote {
   quote: string,
   author: string
 }
-export interface FetchUserQuotes {
+export interface FetchUserQuotesAction {
   type: ActionType.FETCH_USER_QUOTES;
   payload: Array<Quote>;
+}
+export interface UserQuotesLoadingToggleAction {
+  type: ActionType.USER_QUOTES_LOADING_TOGGLE;
+  payload: boolean;
 }
 
 export type Action =
@@ -46,4 +50,5 @@ export type Action =
   | FetchQoDAction
   | FetchAllQoDAction
   | SetQoDAction
-  | FetchUserQuotes;
+  | FetchUserQuotesAction
+  | UserQuotesLoadingToggleAction;
