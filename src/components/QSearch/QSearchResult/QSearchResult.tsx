@@ -24,7 +24,7 @@ const QSearchResult: React.FC<QSearchResultProps> = (props) => {
       {!userQuotes.loading && userQuotes.data.length > 0 && userQuotes.data.map(quote => {
         return (
             <div key={quote.id} className="d-flex flex-row mb-3">
-              <FontAwesomeIcon icon={faMessage} size="10x" className="icon-message"/>
+              <FontAwesomeIcon icon={faMessage} size={window.innerWidth > 576 ? '10x' : '5x'} className="icon-message"/>
               <div className="d-flex flex-column">
                 <div>{quote.author ? quote.author : 'Unknown'}</div>
                 <div className="quote">

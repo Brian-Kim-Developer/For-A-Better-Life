@@ -88,10 +88,15 @@ $color-black: #000;
   }
 }
 
-// @media (max-width: 786px) {
-//   .qod-container {
-//     .qod-text-container {
-//       width: 600px;
-//     }
-//   }
-// }
+@media (max-width: 576px) {
+  .qod-container {
+    .qod-text-container {
+      h1 {
+        font-size: 24px;
+      }
+      h4, h5 {
+        font-size: 16px;
+      }
+    }
+  }
+}

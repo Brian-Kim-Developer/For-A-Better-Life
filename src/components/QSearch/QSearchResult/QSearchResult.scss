@@ -87,3 +87,18 @@ $color-mint: #50d8d7;
 #reset:hover:after,
 #reset:focus:before,
 #reset:focus:after { opacity: 1 }
+
+@media (max-width: 576px) {
+  #reset {
+    font: normal bold 1.5em Arial,sans-serif !important;
+  }
+
+  .result-containter {
+    .author {
+      font-size: 14px;
+    }
+    .quote {
+      font-size: 16px;
+    }
+  }  
+}

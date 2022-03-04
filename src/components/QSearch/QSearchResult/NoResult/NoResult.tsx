@@ -7,7 +7,7 @@ import "./NoResult.scss";
 const NoResult: React.FC<any> = () => {
   return (
     <div className="error-container">
-      <FontAwesomeIcon icon={faFaceSadTear} size="10x" className="icon-error mb-3"/>
+      <FontAwesomeIcon icon={faFaceSadTear} size={window.innerWidth > 576 ? '10x' : '5x'} className="icon-error mb-3"/>
       <div className="msg">We weren't able to find a quote.</div>
     </div>
   )

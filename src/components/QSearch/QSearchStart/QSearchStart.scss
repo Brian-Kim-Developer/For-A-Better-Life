@@ -11,3 +11,11 @@ $color-mint: #50d8d7;
   background-color: $color-mint;
   border-radius: 50px;
 }
+
+@media (max-width: 576px) {
+  .start-button {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+  }
+}

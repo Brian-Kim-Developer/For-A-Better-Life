@@ -32,3 +32,9 @@ $color-white: #FFF;
     height: 720px;
   }
 }
+
+@media (max-width: 576px) {
+  .search-header {
+    font-size: 16px;
+  }
+}

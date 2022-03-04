@@ -21,7 +21,7 @@ const QoDCarousel: React.FC<QoDCarouselProps> = (props) => {
     centerMode: true,
     infinite: true,
     centerPadding: "0px",
-    slidesToShow: 3,
+    slidesToShow: window.innerWidth > 576 ? 3 : 1,
     speed: 500,
     dots: true
   };
