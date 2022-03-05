@@ -58,16 +58,10 @@ export interface QuoteSearch {
   query: string
 }
 
-export const userQuotesloadingToggle = (status: boolean) => {
-  return {
-    type: ActionType.USER_QUOTES_LOADING_TOGGLE,
-    payload: status
-  }
-}
-
 export const fetchUserQuotes = (formValues: QuoteSearch) => {
   return async (dispatch: Dispatch<Action>) => {
     try {
+      userQuotesLoadingToggle(true);
       const response = await api.get('/quote/search', {
         params: {
           'category': formValues.category,
@@ -88,4 +82,23 @@ export const fetchUserQuotes = (formValues: QuoteSearch) => {
       });
     }
   };
+}
+
+export const qoDLoadingToggle = (status: boolean) => {
+  return {
+    type: ActionType.USER_QUOTES_LOADING_TOGGLE,
+    payload: status
+  }
+}
+export const allQoDLoadingToggle = (status: boolean) => {
+  return {
+    type: ActionType.USER_QUOTES_LOADING_TOGGLE,
+    payload: status
+  }
+}
+export const userQuotesLoadingToggle = (status: boolean) => {
+  return {
+    type: ActionType.USER_QUOTES_LOADING_TOGGLE,
+    payload: status
+  }
 }

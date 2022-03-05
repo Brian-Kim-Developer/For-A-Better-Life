@@ -40,6 +40,17 @@ export interface FetchUserQuotesAction {
   type: ActionType.FETCH_USER_QUOTES;
   payload: Array<Quote>;
 }
+
+export interface QoDLoadingToggleAction {
+  type: ActionType.QOD_LOADING_TOGGLE;
+  payload: boolean;
+}
+
+export interface AllQoDLoadingToggleAction {
+  type: ActionType.ALL_QOD_LOADING_TOGGLE;
+  payload: boolean;
+}
+
 export interface UserQuotesLoadingToggleAction {
   type: ActionType.USER_QUOTES_LOADING_TOGGLE;
   payload: boolean;
@@ -51,4 +62,6 @@ export type Action =
   | FetchAllQoDAction
   | SetQoDAction
   | FetchUserQuotesAction
+  | QoDLoadingToggleAction
+  | AllQoDLoadingToggleAction
   | UserQuotesLoadingToggleAction;

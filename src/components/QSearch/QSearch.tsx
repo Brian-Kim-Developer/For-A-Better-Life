@@ -19,7 +19,7 @@ interface QSearchProps {
 const QSearch: React.FC<QSearchProps> = (props) => {
 
   const { onSubmit } = props;
-  const { userQuotesloadingToggle } = useActions();
+  const { userQuotesLoadingToggle } = useActions();
   const theme = useTypedSelector((state) => state.theme);
   const [page, setPage] = useState(0);
 
@@ -37,7 +37,7 @@ const QSearch: React.FC<QSearchProps> = (props) => {
 
   const getResult = (formValues: QuoteSearch) => {
     nextPage();
-    userQuotesloadingToggle(true);
+    userQuotesLoadingToggle(true);
     onSubmit(formValues);
   }
 
